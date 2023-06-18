@@ -71,4 +71,8 @@ export class UserService {
     const userJson = localStorage.getItem(USER_KEY);
     return userJson ? JSON.parse(userJson) : new User();
   }
+
+  public get currentUser(): User {
+    return this.userSubject.value;
+  }
 }
